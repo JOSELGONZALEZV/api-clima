@@ -13,7 +13,7 @@
 
         .etiqueta {
             border: 1px solid !important;
-            border-color: rgb(152, 156, 161)important;
+            border-color: rgb(74, 255, 50)important;
             border-radius: 18px !important;
             padding: 20px !important;
             
@@ -29,11 +29,13 @@
             top: 0;  
             opacity: 0.4;
             font-weight: 900;
+            
         
         }
         #tarjeta{
             opacity: 1;
             color:black;
+            
         }
         .boton{
             border-top:50px;
@@ -48,13 +50,19 @@
             background-size: cover;
         }
         .consulta{
-            margin-left: 50px;
-            margin-top: 200px;
+            margin-left: 0px;
+            margin-top: 10px;
 
         }
         .respuesta{
-            margin-left: 600px;
-            margin-top: 0px; 
+            margin-left: 0px;
+            margin-top: 10px; 
+        }
+        .jumbotron{
+            height: 200px;
+            margin-top:0px;
+            padding:0px !important;
+            color: white;
         }
 
       
@@ -70,11 +78,17 @@
 
 <body>
     <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">Aplicacion de Clima en Tiempo Real</h1>
+              <p class="lead">Revisa las condiciones meteorologicas en las principales ciudades del mundo</p>
+            </div>
+          </div>
         <div class="row">
             <div class="col-6 consulta">
             <form action="">
                 <input type="text" name="ciudad" id="ciudad" placeholder="Ingrese la ciudad">
-                <button type="submit boton">consultar</button>
+                <button type="submit boton" class="btn btn-success">consultar</button>
             </form>
             </div>
             <div class="col-6 respuesta">
@@ -97,7 +111,7 @@
 
         var resciudad = $(ciudad).val();  
         console.log(resciudad);
-        var url="http://api.openweathermap.org/data/2.5/weather?q="+ resciudad +"&&appid=6fff2d34745122aae13b8cdd15bdf316&units=metric";
+        var url="http://api.openweathermap.org/data/2.5/weather?q="+ resciudad +"&&appid=6fff2d34745122aae13b8cdd15bdf316&units=metric&lang=es";
     
         $.get(url, function(res) {
            console.log(res);
